@@ -5,7 +5,7 @@ import rutas from "./routes/index.js"
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname).slice(1)
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.use(morgan("dev"))
 
