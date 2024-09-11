@@ -1,0 +1,10 @@
+extends layout 
+
+block content
+    nav.busqueda  
+        h1 Galería
+        h2 #{objeto.title}
+    div#images
+        img.imagenes(src=objeto.primaryImage, alt="Imagen")
+        each foto in objeto.additionalImages
+            img.imagenes(src=foto, alt="Imagen")    

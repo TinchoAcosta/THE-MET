@@ -1,0 +1,107 @@
+body{
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    margin: 0;
+}
+div#container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:10px;
+}
+img{
+    width: 250px;
+    height: 200px;
+    border-radius: 15px;
+}
+img.imagenes{
+    width: 650px;
+    height: 500px;
+}
+.card{
+    border-style: solid;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+span.blue{
+    color: blue;
+}
+nav.busqueda {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+    padding: 0;
+}
+label{
+    color: white;
+}
+input, select{
+    border-radius: 10px;
+}
+input.vermas{
+    background-color: red;
+    color: white;
+}
+nav h1, nav h2{
+    color: white;
+}
+h1{
+    font-size: 3em;
+}
+form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+input[type="search"],select,input[type="submit"], h1 {
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+nav.pagination ul{
+    
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+nav.pagination ul li{
+
+    padding: 5px;
+    background-color: red;
+    color: black;
+    border-radius: 10px;
+    margin-right: 4px;
+    margin-top: 4px;
+}    
+nav.pagination ul li a{
+    color: white;
+    text-decoration: none;
+}    
+
+.imagen{
+    position: relative;
+}
+.imagen::after{
+    content: attr(data-imagen);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.548);
+    color: white;
+    transition: opacity 0.2s ease;
+    border-radius: 15px;
+}
+.imagen:hover::after{
+    opacity: 1;
+}
