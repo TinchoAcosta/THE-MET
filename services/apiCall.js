@@ -43,7 +43,7 @@ export async function listarObras(ids) {
       const objeto = await respuesta.json()
 
       if (objeto.title) {
-        translate({ text: objeto.title, target: 'es', source: 'en' })
+        translate({ text: objeto.title, target: 'es', source: 'auto' })
           .then(result => {
             objeto.title = result.translation
           })
@@ -52,7 +52,7 @@ export async function listarObras(ids) {
           });
       }
       if (objeto.culture) {
-        translate({ text: objeto.culture, target: 'es', source: 'en' })
+        translate({ text: objeto.culture, target: 'es', source: 'auto' })
           .then(result => {
             objeto.culture = result.translation
           })
@@ -61,7 +61,7 @@ export async function listarObras(ids) {
           });
       }
       if (objeto.dynasty) {
-        translate({ text: objeto.dynasty, target: 'es', source: 'en' })
+        translate({ text: objeto.dynasty, target: 'es', source: 'auto' })
           .then(result => {
             objeto.dynasty = result.translation
           })
