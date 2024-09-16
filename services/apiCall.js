@@ -12,7 +12,7 @@ export async function obtenerIds(endpoint) {
 
     const idsJson = await respuesta.json()
     const idsTotales = await idsJson.objectIDs
-    const ids = idsTotales.slice(0,20)
+    const ids = idsTotales.slice(0,80)
     return ids
   } catch (error) {
     console.log(error.message)
