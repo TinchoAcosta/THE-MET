@@ -2,7 +2,7 @@ import { obtenerIds, listarObras, obtenerDepartments, obtenerObra } from "../ser
 
 const consultas = {
     async cargarHome(req, res){
-        const url1 = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q=sunflower'
+        const url1 = 'https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=1'
         const url2 = 'https://collectionapi.metmuseum.org/public/collection/v1/departments'
         const departments = await obtenerDepartments(url2)
         const ids = await obtenerIds(url1)
