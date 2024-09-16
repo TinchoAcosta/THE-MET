@@ -68,6 +68,7 @@ nav.pagination ul{
     display: flex;
     flex-direction: row;
     list-style: none;
+    justify-content: center;
 }
 nav.pagination ul li{
 
