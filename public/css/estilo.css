@@ -60,7 +60,7 @@ input[type="search"],select,input[type="submit"], h1 {
     margin-right: 10px;
 }
 nav.pagination{
-    display: flex;
+    display: flex;    
     justify-content: center;
 }
 nav.pagination ul{
@@ -71,6 +71,7 @@ nav.pagination ul{
     display: flex;
     flex-direction: row;
     list-style: none;
+    justify-content: center;
 }
 nav.pagination ul li{
 
