@@ -59,7 +59,10 @@ input[type="search"],select,input[type="submit"], h1 {
     padding: 5px 10px;
     margin-right: 10px;
 }
-
+nav.pagination{
+    display: flex;
+    justify-content: center;
+}
 nav.pagination ul{
     
     max-width: 100%;
@@ -68,7 +71,6 @@ nav.pagination ul{
     display: flex;
     flex-direction: row;
     list-style: none;
-    justify-content: center;
 }
 nav.pagination ul li{
 
