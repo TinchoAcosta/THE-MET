@@ -3,7 +3,7 @@ import path from "path"
 import morgan from "morgan"
 import rutas from "./routes/index.js"
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname).slice(1)
+const __dirname = path.dirname(new URL(import.meta.url).pathname)
 const app = express()
 const port = process.env.PORT || 3000
 
