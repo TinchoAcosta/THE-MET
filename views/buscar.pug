@@ -1,8 +1,9 @@
 extends layout
 mixin paginationLink(page, queryParams)
-  - const params = new URLSearchParams(queryParams);
+  - const params = new URLSearchParams({ ...queryParams });
   - params.set('page', page);
   a(href=`/Buscar?${params.toString()}`)= page
+
 block content
   nav.busqueda 
     h1 Galería
@@ -23,13 +24,13 @@ block content
           img(src=obj.primaryImage ? obj.primaryImage : 'images/MET-logo.webp', alt="Imagen") 
         p 
           span.blue Título: 
-          |#{obj.title ? obj.title : "-"}
+          | #{obj.title ? obj.title : "-"}
         p 
           span.blue Cultura: 
-          |#{obj.culture ? obj.culture : "-"} 
+          | #{obj.culture ? obj.culture : "-"} 
         p 
           span.blue Dinastía: 
-          |#{obj.dynasty ? obj.dynasty : "-"}
+          | #{obj.dynasty ? obj.dynasty : "-"}
         if obj.additionalImages.length !== 0
           input.vermas(type="button", value="Ver más",onclick=`window.location.href='/images?id=${obj.objectID}'`)   
   if totalPages > 1
@@ -38,7 +39,7 @@ block content
         if currentPage > 1
           - const prevPageParams = { ...queryParams, page: currentPage - 1 };
           li
-            +paginationLink(currentPage - 1, prevPageParams)
+            a(href=`/Buscar?${new URLSearchParams(prevPageParams).toString()}`) Anterior
         each page in [...Array(totalPages).keys()].map(i => i + 1)
           li
             if page === currentPage
@@ -48,4 +49,4 @@ block content
         if currentPage < totalPages
           - const nextPageParams = { ...queryParams, page: currentPage + 1 };
           li
-            +paginationLink(currentPage + 1, nextPageParams)
+            a(href=`/Buscar?${new URLSearchParams(nextPageParams).toString()}`) Siguiente
