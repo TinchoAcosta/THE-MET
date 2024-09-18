@@ -60,7 +60,7 @@ const consultas = {
                 const items = objetos.slice(startIndex, endIndex);
                 const totalPages = Math.ceil(objetos.length / itemsPerPage);
                 const queryParams = req.query
-                res.render("buscar", {objetos: items, departments,
+                res.render("buscar2", {objetos: items, departments,
                     currentPage: page,
                     totalPages: totalPages,
                     queryParams

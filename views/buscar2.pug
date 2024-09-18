@@ -1,0 +1,57 @@
+extends layout
+mixin paginationLink(page, queryParams)
+  - const params = new URLSearchParams({ ...queryParams }); // Clonar queryParams
+  - params.set('page', page);
+  a(href=`/Buscar?${params.toString()}`)= page
+
+block content
+  nav.busqueda 
+    h1 Galería
+    form(action="/Buscar", method="get") 
+      label(for="query") Palabra clave 
+      input(type="search", name="query")
+      select#comboDep(name="department")
+        option(value="Ninguno" selected) Ninguno
+        each dep in departments   
+          option(value=dep.departmentId) #{dep.displayName}   
+      label(for="geoLocation") Localización 
+      input(type="search", name="geoLocation")
+      input(type="submit", value="Buscar", id="btnBuscar")  
+  div#container
+    each obj in objetos
+      div.card
+        div.imagen(data-imagen= `${obj.objectDate || "Sin fecha"}`)
+          img(src=obj.primaryImage ? obj.primaryImage : 'images/MET-logo.webp', alt="Imagen") 
+        p 
+          span.blue Título: 
+          | #{obj.title ? obj.title : "-"}
+        p 
+          span.blue Cultura: 
+          | #{obj.culture ? obj.culture : "-"} 
+        p 
+          span.blue Dinastía: 
+          | #{obj.dynasty ? obj.dynasty : "-"}
+        if obj.additionalImages.length !== 0
+          input.vermas(type="button", value="Ver más",onclick=`window.location.href='/images?id=${obj.objectID}'`)   
+  if totalPages > 1
+    nav.pagination
+      ul
+        // Botón Anterior
+        if currentPage > 1
+          - const prevPageParams = { ...queryParams, page: currentPage - 1 };
+          li
+            a(href=`/Buscar?${new URLSearchParams(prevPageParams).toString()}`) Anterior
+        
+        // Páginas numeradas
+        each page in [...Array(totalPages).keys()].map(i => i + 1)
+          li
+            if page === currentPage
+              span= page
+            else
+              +paginationLink(page, queryParams)
+
+        // Botón Siguiente
+        if currentPage < totalPages
+          - const nextPageParams = { ...queryParams, page: currentPage + 1 };
+          li
+            a(href=`/Buscar?${new URLSearchParams(nextPageParams).toString()}`) Siguiente
