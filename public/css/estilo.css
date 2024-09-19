@@ -2,6 +2,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     margin: 0;
+    display: flex;
 }
 
 div#container {
