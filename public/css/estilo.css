@@ -59,7 +59,7 @@ input[type="search"],select,input[type="submit"], h1 {
     padding: 5px 10px;
     margin-right: 10px;
 }
-nav.pagination ul{
+nav.pagination ul.pags{
     
     max-width: 100%;
     margin: 0 auto;
@@ -69,7 +69,7 @@ nav.pagination ul{
     flex-direction: row;
     justify-content: center;
 }
-nav.pagination ul li{
+nav.pagination ul.pags li{
 
     padding: 5px;
     background-color: red;
@@ -78,7 +78,7 @@ nav.pagination ul li{
     margin-right: 4px;
     margin-top: 4px;
 }    
-nav.pagination ul li a{
+nav.pagination ul.pags li a{
     color: white;
     text-decoration: none;
 }    

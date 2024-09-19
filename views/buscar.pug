@@ -35,7 +35,7 @@ block content
           input.vermas(type="button", value="Ver más",onclick=`window.location.href='/images?id=${obj.objectID}'`)   
   if totalPages > 1
     nav.pagination
-      ul
+      ul.pags
         if currentPage > 1
           - const prevPageParams = { ...queryParams, page: currentPage - 1 };
           li
