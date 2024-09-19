@@ -59,19 +59,15 @@ input[type="search"],select,input[type="submit"], h1 {
     padding: 5px 10px;
     margin-right: 10px;
 }
-/*nav.pagination{
-    display: flex;    
-    justify-content: center;
-}*/
 nav.pagination ul{
     
-    display: flex;
-    justify-content: center;
     max-width: 100%;
     margin: 0 auto;
     overflow-x: auto;
-    flex-direction: row;
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 nav.pagination ul li{
 
