@@ -65,6 +65,7 @@ input[type="search"],select,input[type="submit"], h1 {
 }*/
 nav.pagination ul{
     
+    min-height: auto;
     max-width: 100%;
     margin: 0 auto;
     overflow-x: auto;
