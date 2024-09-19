@@ -2,7 +2,6 @@ body {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     margin: 0;
-    display: flex;
 }
 
 div#container {
@@ -81,6 +80,8 @@ h1 {
 
 nav.pagination {
     display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
 nav.pagination ul.pags {
@@ -103,6 +104,8 @@ nav.pagination ul.pags li {
     margin-right: 4px;
     margin-top: 4px;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 nav.pagination ul.pags li a {
