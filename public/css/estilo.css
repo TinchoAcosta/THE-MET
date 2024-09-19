@@ -65,14 +65,13 @@ input[type="search"],select,input[type="submit"], h1 {
 }*/
 nav.pagination ul{
     
-    min-height: auto;
+    display: flex;
+    justify-content: center;
     max-width: 100%;
     margin: 0 auto;
     overflow-x: auto;
-    display: flex;
     flex-direction: row;
     list-style: none;
-    justify-content: center;
 }
 nav.pagination ul li{
 
